@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mahdi Hasan - Cyber Security Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .ppt-slide {
+                @apply relative w-full mx-auto box-border overflow-hidden
+            }
+        }
+    </style>
+    <style>body {
+    font-family: "Rajdhani", sans-serif;
+    background: #050a1f;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh
+    }
+.cyber-title {
+    font-family: "Orbitron", sans-serif
+    }
+.glow-cyan {
+    text-shadow: 0 0 10px rgba(55, 220, 242, 0.8), 0 0 20px rgba(55, 220, 242, 0.4)
+    }
+/* --- NEW ANIMATIONS --- */
+@keyframes typing {
+    from {
+        width: 0;
+        } to {
+        width: 100%;
+        }
+    }
+.type-cursor::after {
+    content: "█";
+    animation: blink 1s infinite;
+    color: #37DCF2;
+    font-size:1.2rem
+    }
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        } 50% {
+        opacity: 0;
+        }
+    }
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0deg);
+        } 20% {
+        transform: skew(-2deg);
+        } 40% {
+        transform: skew(2deg);
+        } 60% {
+        transform: skew(-1deg);
+        } 80% {
+        transform: skew(1deg);
+        } 100% {
+        transform: skew(0deg);
+        }
+    }
+.glitch-text {
+    position: relative;
+    animation: glitch-skew 3s infinite linear alternate-reverse
+    }
+@keyframes scan-vertical {
+    0% {
+        top: -10%;
+        } 100% {
+        top: 110%;
+        }
+    }
+.scan-vertical {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #37DCF2, transparent);
+    animation: scan-vertical 4s linear infinite;
+    opacity: 0.5
+    }
+@keyframes radar-sweep {
+    0% {
+        transform: rotate(0deg);
+        } 100% {
+        transform: rotate(360deg);
+        }
+    }
+.radar-spin {
+    animation: radar-sweep 4s linear infinite
+    }
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+        } 100% {
+        transform: scale(1.2);
+        opacity: 0;
+        }
+    }
+.pulse-ring {
+    border: 1px solid #37DCF2;
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite
+    }
+@keyframes noise {
+    0%, 100% {
+        background-position: 0 0;
+        } 10% {
+        background-position: -5% -10%;
+        } 20% {
+        background-position: -15% 5%;
+        } 30% {
+        background-position: 7% -25%;
+        } 40% {
+        background-position: -5% 25%;
+        } 50% {
+        background-position: -15% 10%;
+        } 60% {
+        background-position: 15% 0%;
+        } 70% {
+        background-position: 0% 15%;
+        } 80% {
+        background-position: 3% 35%;
+        } 90% {
+        background-position: -10% 10%;
+        }
+    }
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.05;
+    background: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E");
+    animation: noise 0.2s infinite
+    }
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+        } 50% {
+        transform: translateY(-10px);
+        }
+    }
+.float-anim {
+    animation: float 4s ease-in-out infinite
+    }
+/* --- Keep Old Animations --- */
+.glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite
+    }
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(55, 220, 242, 0.8);
+        } 50% {
+        text-shadow: 0 0 20px rgba(55, 220, 242, 1);
+        }
+    }
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.3;
+        } 50% {
+        opacity: 0.8;
+        }
+    }
+.pulse-effect {
+    animation: pulse-glow 2.5s ease-in-out infinite
+    }
+@keyframes scan-h {
+    0% {
+        transform: translateX(-100%);
+        } 100% {
+        transform: translateX(100vw);
+        }
+    }
+.scan-line-h {
+    animation: scan-h 4s linear infinite
+    }
+@keyframes scan-reverse {
+    0% {
+        transform: translateX(100vw);
+        } 100% {
+        transform: translateX(-100%);
+        }
+    }
+.scan-line-reverse {
+    animation: scan-reverse 5s linear infinite
+    }
+@keyframes grid-pattern-move {
+    0% {
+        background-position: 0 0;
+        } 100% {
+        background-position: 40px 40px;
+        }
+    }
+.grid-pattern {
+    background-image: linear-gradient(rgba(55, 220, 242, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(55, 220, 242, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: grid-pattern-move 8s linear infinite
+    }
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        } to {
+        transform: rotate(360deg);
+        }
+    }
+.rotate-slow {
+    animation: rotate 20s linear infinite
+    }
+@keyframes glitch {
+    0%, 90%, 100% {
+        transform: translate(0);
+        } 92% {
+        transform: translate(-2px, 2px);
+        } 94% {
+        transform: translate(2px, -2px);
+        } 96% {
+        transform: translate(-2px, -2px);
+        } 98% {
+        transform: translate(2px, 2px);
+        }
+    }
+.glitch-effect {
+    animation: glitch 5s infinite
+    }
+@keyframes border-pulse {
+    0%, 100% {
+        border-color: rgba(55, 220, 242, 0.3);
+        box-shadow: 0 0 5px rgba(55, 220, 242, 0.1);
+        } 50% {
+        border-color: rgba(55,  220, 242, 0.6);
+        box-shadow: 0 0 20px rgba(55, 220, 242, 0.3);
+        }
+    }
+.border-pulse {
+    animation: border-pulse 3s ease-in-out infinite
+    }
+@keyframes particle {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+        } 10% {
+        opacity: 1;
+        } 90% {
+        opacity: 1;
+        } 100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+        }
+    }
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #37DCF2;
+    border-radius: 50%;
+    animation: particle 8s linear infinite
+    }
+@keyframes corner-pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+        } 50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+        }
+    }
+.corner-pulse {
+    animation: corner-pulse 2s ease-in-out infinite
+    }
+@keyframes number-pulse {
+    0%, 100% {
+        transform: scale(1);
+        } 50% {
+        transform: scale(1.1);
+        }
+    }
+.number-pulse {
+    animation: number-pulse 2s ease-in-out infinite
+    }
+::-webkit-scrollbar {
+    width: 8px;
+    }
+::-webkit-scrollbar-track {
+    background: #0a0e27;
+    }
+::-webkit-scrollbar-thumb {
+    background: #37DCF2;
+    border-radius: 4px;
+    }</style>
+<style>.material-icons {
+    width: 1em
+    }</style><style>.material-icons {
+    direction: rtl
+    }</style></head>
+<body>
+
+    <!-- Noise Overlay for Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Global Background Effects -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <!-- CHANGED BACKGROUND: Replaced flat linear gradient with deep radial gradient -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center_top,_#1a233a_0%,_#050a1f_50%,_#000000_100%)]"></div>
+        
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="absolute inset-0 opacity-6">
+            <div class="scan-line-h w-full h-px bg-[#37DCF2]"></div>
+            <div class="scan-line-reverse w-full h-px bg-[#37DCF2]" style="animation-delay: 1s"></div>
+            <!-- Vertical Scan Lines -->
+            <div class="scan-vertical left-1/4" style="animation-delay: 0s"></div>
+            <div class="scan-vertical left-2/4" style="animation-delay: 2s"></div>
+            <div class="scan-vertical left-3/4" style="animation-delay: 1s"></div>
+        </div>
+        <div class="particle" style="left: 10%;
+animation-delay: 0s"></div>
+        <div class="particle" style="left: 30%;
+animation-delay: 2s"></div>
+        <div class="particle" style="left: 50%;
+animation-delay: 1.5s"></div>
+        <div class="particle" style="left: 70%;
+animation-delay: 3s"></div>
+        <div class="particle" style="left: 90%;
+animation-delay: 0.5s"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <!-- max-w-[95%] ensures Full Page width while keeping small margins -->
+    <div class="relative z-10 w-full max-w-[95%] md:max-w-[95%] mx-auto px-6 py-12">
+
+        <!-- Header / Hero Section (REDESIGNED) -->
+        <header class="mb-24 relative flex flex-col items-center justify-center min-h-[50vh]">
+            
+            <!-- Decorative Corners -->
+            <div class="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#37DCF2] corner-pulse"></div>
+            <div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-[#37DCF2] corner-pulse" style="animation-delay: 0.5s"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#37DCF2] corner-pulse" style="animation-delay: 1s"></div>
+            <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#37DCF2] corner-pulse" style="animation-delay: 1.5s"></div>
+
+            <!-- Cyber Targeting Reticle (Replacing Image) -->
+            <div class="relative w-40 h-40 mb-8 float-anim">
+                <div class="absolute inset-0 border border-[#37DCF2]/50 rounded-full flex items-center justify-center">
+                    <div class="w-2 h-2 bg-[#37DCF2] rounded-full animate-ping"></div>
+                </div>
+                <!-- Rotating Dashed Ring -->
+                <div class="absolute inset-0 border-2 border-dashed border-[#37DCF2]/30 rounded-full radar-spin"></div>
+                <!-- Pulse Rings -->
+                <div class="absolute inset-[-10%] border border-[#37DCF2]/20 rounded-full pulse-ring" style="animation-delay: 0s"></div>
+                <div class="absolute inset-[-20%] border border-[#37DCF2]/10 rounded-full pulse-ring" style="animation-delay: 0.5s"></div>
+                <!-- Crosshairs -->
+                <div class="absolute top-1/2 left-0 w-full h-px bg-[#37DCF2]/50 -translate-y-1/2"></div>
+                <div class="absolute left-1/2 top-0 h-full w-px bg-[#37DCF2]/50 -translate-x-1/2"></div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="text-center z-10">
+                <div class="mb-4 text-[#37DCF2] font-mono text-sm tracking-[0.3em] opacity-80">
+                    <span class="inline-block w-2 h-4 bg-[#37DCF2] mr-2 animate-pulse"></span>
+                    ID: MH-SEC-001 // ACCESS LEVEL: 5
+                    <span class="inline-block w-2 h-4 bg-[#37DCF2] ml-2 animate-pulse"></span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-bold text-white mb-4 cyber-title glitch-text glow-pulse leading-none">
+                    MAHDI HASAN
+                </h1>
+                <div class="relative inline-block mb-8">
+                    <h2 class="text-xl md:text-4xl font-bold text-[#37DCF2] cyber-title tracking-widest uppercase">
+                        Cyber Security Engineer
+                    </h2>
+                    <div class="absolute bottom-0 right-0 type-cursor"></div>
+                </div>
+
+                <!-- STATS SECTION (MODIFIED TO REMOVE ANIMATIONS) -->
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-12">
+                    <!-- Stat 1: Removed animation classes -->
+                    <div class="text-center group">
+                        <div class="text-5xl md:text-6xl font-bold text-white cyber-title">6+</div>
+                        <div class="text-[#37DCF2] text-xs tracking-wider mt-1 uppercase font-mono">Years Exp</div>
+                        <div class="h-0.5 w-full bg-[#37DCF2]/30 mt-2"></div>
+                    </div>
+
+                    <!-- Stat 2: Removed animation classes -->
+                    <div class="text-center group">
+                        <div class="text-5xl md:text-6xl font-bold text-white cyber-title">62+</div>
+                        <div class="text-[#37DCF2] text-xs tracking-wider mt-1 uppercase font-mono">Banks & Orgs</div>
+                        <div class="h-0.5 w-full bg-[#37DCF2]/30 mt-2"></div>
+                    </div>
+
+                    <!-- Stat 3: Removed animation classes -->
+                    <div class="text-center group">
+                        <div class="text-5xl md:text-6xl font-bold text-white cyber-title">45+</div>
+                        <div class="text-[#37DCF2] text-xs tracking-wider mt-1 uppercase font-mono">Solutions</div>
+                        <div class="h-0.5 w-full bg-[#37DCF2]/30 mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="mb-20 relative">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-[#37DCF2]"></div>
+                <h2 class="text-2xl font-bold text-white cyber-title uppercase tracking-wider type-cursor">Profile</h2>
+            </div>
+            <div class="bg-[#0a0e27]/60 backdrop-blur-md border border-[#37DCF2]/30 rounded-lg p-6 md:p-8 hover:border-[#37DCF2]/60 transition-all duration-300">
+                <p class="text-lg text-gray-200 leading-relaxed">
+                    Cyber Security Expert with <span class="text-[#37DCF2] font-semibold glow-pulse">6+ years</span> of experience in SOC operations, incident response, and digital forensics. Specialized in malware analysis, penetration testing, IAM. Proven track record of securing <span class="text-[#37DCF2] font-semibold glow-pulse">62+ banks and enterprise organizations</span> and deploying <span class="text-[#37DCF2] font-semibold glow-pulse">45+ enterprise</span> cybersecurity solutions across financial, government, and corporate sectors. Skilled in SIEM, IDS/IPS, IAM, cloud security, disaster recovery, and risk management.
+                </p>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE SECTION -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-[#37DCF2]"></div>
+                <h2 class="text-2xl font-bold text-white cyber-title uppercase tracking-wider type-cursor">Work Experience</h2>
+            </div>
+
+            <div class="relative border-l-2 border-[#37DCF2]/30 ml-4 space-y-12">
+
+                <!-- Job 1 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0e27] border-2 border-[#37DCF2] rounded-full shadow-[0_0_10px_#37DCF2] group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/20 p-6 rounded-lg hover:border-[#37DCF2] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(55,220,242,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white cyber-title">Security Engineer & Analyst (L2)</h3>
+                                <h4 class="text-[#37DCF2] font-medium">FELICITY IDC LIMITED, BANGLADESH</h4>
+                            </div>
+                            <span class="text-[#37DCF2] font-mono text-sm bg-[#37DCF2]/10 px-2 py-1 rounded mt-2 md:mt-0 inline-block border border-[#37DCF2]/20">NOW - Apr 2025</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-2 border-b border-[#37DCF2]/30 pb-1">Projects & Notable Achievements</h5>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                                <li>Handled ransomware attacks and advanced persistent threats, ensuring timely containment and mitigation.</li>
+                                <li>Reverse engineered malicious processes to identify attack vectors and strengthen defenses.</li>
+                                <li>Performed vulnerability assessments, penetration tests, and SOC operations to secure infrastructure.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-2 border-b border-[#37DCF2]/30 pb-1">Responsibilities</h5>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                                <li>Lead L2 SOC operations using SIEM, EDR, and threat intelligence for continuous monitoring and incident response.</li>
+                                <li>Conduct penetration testing and red team simulations to evaluate security posture.</li>
+                                <li>Perform digital forensics and malware analysis on active incidents.</li>
+                                <li>Optimize SOC processes with SIEM tuning, SOAR playbooks, and IDS/IPS rule enhancements.</li>
+                                <li>Integrate threat intelligence feeds to enhance real-time monitoring.</li>
+                                <li>Collaborate with IT teams for timely remediation of vulnerabilities.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0e27] border-2 border-[#37DCF2] rounded-full shadow-[0_0_10px_#37DCF2] group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/20 p-6 rounded-lg hover:border-[#37DCF2] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(55,220,242,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white cyber-title">Cyber Security (Presales)</h3>
+                                <h4 class="text-[#37DCF2] font-medium">SMARTDATA TECHNOLOGIES LIMITED, DHAKA</h4>
+                            </div>
+                            <span class="text-[#37DCF2] font-mono text-sm bg-[#37DCF2]/10 px-2 py-1 rounded mt-2 md:mt-0 inline-block border border-[#37DCF2]/20">Aug 2023 - Apr 2025</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-2 border-b border-[#37DCF2]/30 pb-1">Projects & Notable Achievements</h5>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2] mb-4">
+                                <li>Protected digital operations of <span class="text-white font-bold">62+ banks and critical organizations</span> (Bangladesh Bank, NBR, BCC, Bangladesh Police, Dhaka Stock Exchange, etc.).</li>
+                                <li>Deployed and optimized <span class="text-white font-bold">45+ enterprise cybersecurity solutions</span> (endpoint, API, cloud, firewall, IAM).</li>
+                            </ul>
+                            
+                            <h6 class="text-[#37DCF2] text-sm font-bold mb-2">Key Projects:</h6>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-300">
+                                <div><strong class="text-white">Bandwidth Manager:</strong> Bangladesh Bank (Aug 2024)</div>
+                                <div><strong class="text-white">MFA Implementation:</strong> Gov. Org (Jun 2024)</div>
+                                <div><strong class="text-white">Disaster Recovery:</strong> Bangladesh Police (Sep 2023)</div>
+                                <div><strong class="text-white">DB Access Mgmt:</strong> Dutch-Bangla Bank (Dec 2023)</div>
+                                <div><strong class="text-white">NDR Solution:</strong> Gov. Org</div>
+                                <div><strong class="text-white">RMM Solution:</strong> Finetech Int. Ltd (Atera)</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-2 border-b border-[#37DCF2]/30 pb-1">Responsibilities</h5>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                                <li>Conducted risk assessments, penetration testing, digital forensics, sandboxing, malware analysis.</li>
+                                <li>Deployment of cyber security and network solutions (firewalls, endpoint protection, SIEM).</li>
+                                <li>Consultancy and client management.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0e27] border-2 border-[#37DCF2] rounded-full shadow-[0_0_10px_#37DCF2] group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/20 p-6 rounded-lg hover:border-[#37DCF2] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(55,220,242,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white cyber-title">ICT Coordinator</h3>
+                                <h4 class="text-[#37DCF2] font-medium">ICT MINISTRY OF BANGLADESH</h4>
+                            </div>
+                            <span class="text-[#37DCF2] font-mono text-sm bg-[#37DCF2]/10 px-2 py-1 rounded mt-2 md:mt-0 inline-block border border-[#37DCF2]/20">Jan 2023 - Aug 2023</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-2 border-b border-[#37DCF2]/30 pb-1">Projects & Notable Achievements</h5>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                                <li>Improved ICT infrastructure for 6 sub-districts under Gazipur administration.</li>
+                                <li>Facilitated secure e-governance and citizen service automation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-2 border-b border-[#37DCF2]/30 pb-1">Responsibilities</h5>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                                <li>Provided ICT training and technical support to government staff.</li>
+                                <li>Implemented IT policies ensuring secure data access and usage.</li>
+                                <li>Conducted Security Awareness Campaigns.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0e27] border-2 border-[#37DCF2] rounded-full shadow-[0_0_10px_#37DCF2] group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/20 p-6 rounded-lg hover:border-[#37DCF2] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(55,220,242,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white cyber-title">System Administrator</h3>
+                                <h4 class="text-[#37DCF2] font-medium">NANDAN TV, CANADA</h4>
+                            </div>
+                            <span class="text-[#37DCF2] font-mono text-sm bg-[#37DCF2]/10 px-2 py-1 rounded mt-2 md:mt-0 inline-block border border-[#37DCF2]/20">2019 - 2022</span>
+                        </div>
+                        <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                            <li>Strengthened IT resilience through OS hardening, infrastructure reinforcement, and proactive security protocols.</li>
+                            <li>Conducted regular audits and monitored enterprise systems to ensure compliance, reliability, and threat mitigation.</li>
+                            <li>Maintained secure networks, optimized server configurations, and ensured zero downtime in operations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0e27] border-2 border-[#37DCF2] rounded-full shadow-[0_0_10px_#37DCF2] group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/20 p-6 rounded-lg hover:border-[#37DCF2] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(55,220,242,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white cyber-title">Software Developer</h3>
+                                <h4 class="text-[#37DCF2] font-medium">SEAN PUBLICATION</h4>
+                            </div>
+                            <span class="text-[#37DCF2] font-mono text-sm bg-[#37DCF2]/10 px-2 py-1 rounded mt-2 md:mt-0 inline-block border border-[#37DCF2]/20">2018 - 2022</span>
+                        </div>
+                        <ul class="text-gray-300 space-y-1 list-disc list-inside marker:text-[#37DCF2]">
+                            <li>Developed and maintained applications using JavaScript, PHP, and Python.</li>
+                            <li>Collaborated with teams on coding, debugging, and optimization to improve functionality.</li>
+                            <li>Supported deployment and configuration of software, ensuring smooth integration.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION (FIXED) -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-[#37DCF2]"></div>
+                <h2 class="text-2xl font-bold text-white cyber-title uppercase tracking-wider type-cursor">Education</h2>
+            </div>
+
+            <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 rounded-lg p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.15)] transition-all duration-300 relative overflow-hidden group">
+                
+                <!-- Background Glow Effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-[#37DCF2]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <!-- Left: Icon + Info -->
+                <div class="flex items-start gap-4 relative z-10">
+                    <div class="w-14 h-14 rounded-lg bg-[#37DCF2]/10 flex items-center justify-center flex-shrink-0 border border-[#37DCF2]/30 shadow-[0_0_10px_rgba(55,220,242,0.1)]">
+                        <span class="material-icons text-[#37DCF2] text-3xl">school</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white cyber-title leading-tight">ASHULIA INSTITUTE OF SCIENCE AND TECHNOLOGY</h3>
+                        <p class="text-[#37DCF2] text-lg mt-2 font-medium">Diploma in Computer Science</p>
+                    </div>
+                </div>
+
+                <!-- Right: Date (Fixed Design) -->
+                <!-- 'w-full text-center mt-4' stacks it below on mobile. 'md:w-auto md:text-right md:mt-0' aligns right on desktop -->
+                <div class="w-full text-center md:w-auto md:text-right mt-6 md:mt-0 relative z-10">
+                    <!-- 'whitespace-nowrap' ensures 2015-2018 never breaks. 'bg-[#0f1623]' gives it a solid background tag look -->
+                    <div class="inline-block bg-[#0f1623] border border-[#37DCF2] text-[#37DCF2] font-mono font-bold text-sm px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(55,220,242,0.2)] whitespace-nowrap hover:bg-[#37DCF2] hover:text-black transition-colors duration-300">
+                        2015 - 2018
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-[#37DCF2]"></div>
+                <h2 class="text-2xl font-bold text-white cyber-title uppercase tracking-wider type-cursor">Technical Skills</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">manage_search</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Digital Forensics & Malware Analysis</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">memory</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Reverse Engineering</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">radar</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">SOC Operations & SIEM</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">gavel</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Threat Hunting & Incident Response</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">lock_open</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Penetration Testing & Vulnerability Assessment</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">fact_check</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Risk Assessment & Security Auditing</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">cloud</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Cloud Security & Compliance (AWS, Azure)</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">router</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">System & Network Security</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">security</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">OS Hardening & Administration</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">code</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Programming & Scripting</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">web</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Web Application Security</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">fingerprint</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">IAM (IAM, MFA, PAM)</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">restore</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">Disaster Recovery & BCP</h4>
+                    </div>
+                </div>
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-4 rounded hover:border-[#37DCF2] hover:shadow-[0_0_20px_rgba(55,220,242,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-start gap-3">
+                    <span class="material-icons text-[#37DCF2] text-2xl mt-1">settings_ethernet</span>
+                    <div>
+                        <h4 class="text-white font-semibold cyber-title text-sm">IT Infrastructure Management</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CYBERSECURITY SOLUTIONS EXPERTISE SECTION -->
+        <section class="mb-20">
+            <div class="relative bg-[#0f1623] border border-[#37DCF2]/30 rounded-lg p-6 mb-8 shadow-[0_0_20px_rgba(55,220,242,0.05)] overflow-hidden group">
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-[#37DCF2]/5 rounded-full blur-2xl group-hover:bg-[#37DCF2]/10 transition-all"></div>
+                <div class="flex items-center gap-6 relative z-10">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-[#37DCF2] blur-md opacity-20 rounded-full animate-pulse"></div>
+                        <div class="w-14 h-14 rounded-lg bg-[#0a0e27] border border-[#37DCF2] flex items-center justify-center relative z-10 shadow-lg">
+                            <span class="material-icons text-[#37DCF2] text-3xl">construction</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white cyber-title uppercase tracking-widest">Tools & Technologies</h2>
+                        <div class="flex items-center gap-2 mt-2">
+                            <div class="h-[1px] w-8 bg-[#37DCF2]"></div>
+                            <p class="text-[#37DCF2] text-sm font-mono tracking-widest opacity-80">CYBERSECURITY SOLUTIONS EXPERTISE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-6 rounded hover:border-[#37DCF2] transition-all duration-300 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(55,220,242,0.2)]">
+                    <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+                        <span class="material-icons text-6xl text-[#37DCF2]">dangerous</span>
+                    </div>
+                    <h3 class="text-[#37DCF2] font-bold cyber-title text-lg mb-3 flex items-center gap-2">
+                        <span class="material-icons text-2xl">gps_fixed</span>
+                        Threat Detection & Offensive Security
+                    </h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        <span class="text-white font-semibold">Key Tools:</span> Metasploit Framework, Burp Suite, SQLmap, Hydra, Aircrack-ng, John the Ripper.
+                        <br><br>
+                        <span class="text-white font-semibold">Advanced Utilities:</span> Nmap, Wireshark, OpenVAS, Nikto, Armitage, SET (Social Engineering Toolkit).
+                    </p>
+                </div>
+
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-6 rounded hover:border-[#37DCF2] transition-all duration-300 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(55,220,242,0.2)]">
+                    <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+                        <span class="material-icons text-6xl text-[#37DCF2]">domain</span>
+                    </div>
+                    <h3 class="text-[#37DCF2] font-bold cyber-title text-lg mb-3 flex items-center gap-2">
+                        <span class="material-icons text-2xl">corporate_fare</span>
+                        Enterprise Security & Infrastructure
+                    </h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        <span class="text-white font-semibold">SIEM/XDR/SOAR:</span> Stellar Cyber, Core Impact, Imperva, Forescout, Arcon (PAM), Atera, Motadata.
+                        <br><br>
+                        <span class="text-white font-semibold">Network & Cloud:</span> SolarWinds, Paraqum, Scale Computing, EnsureDR, Noname Security, Axway API Security.
+                    </p>
+                </div>
+
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-6 rounded hover:border-[#37DCF2] transition-all duration-300 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(55,220,242,0.2)]">
+                    <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+                        <span class="material-icons text-6xl text-[#37DCF2]">terminal</span>
+                    </div>
+                    <h3 class="text-[#37DCF2] font-bold cyber-title text-lg mb-3 flex items-center gap-2">
+                        <span class="material-icons text-2xl">dns</span>
+                        Operating Systems & Platforms
+                    </h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        <span class="text-white font-semibold">Distros:</span> Kali Linux, Parrot OS, BlackArch, BackBox, Samurai Web Testing Framework.
+                        <br><br>
+                        <span class="text-white font-semibold">Secure Environments:</span> NST, Tails, Cubes OS, MX Linux, BlackWin.
+                    </p>
+                </div>
+
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 p-6 rounded hover:border-[#37DCF2] transition-all duration-300 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(55,220,242,0.2)]">
+                    <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+                        <span class="material-icons text-6xl text-[#37DCF2]">biotech</span>
+                    </div>
+                    <h3 class="text-[#37DCF2] font-bold cyber-title text-lg mb-3 flex items-center gap-2">
+                        <span class="material-icons text-2xl">science</span>
+                        Digital Forensics & Malware Analysis
+                    </h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        <span class="text-white font-semibold">Analysis:</span> Cuckoo Sandbox, Volatility, Autopsy, EnCase, FTK Imager, X-Ways, Cellebrite UFED.
+                        <br><br>
+                        <span class="text-white font-semibold">Reverse Engineering:</span> Ghidra, IDA Pro, Radare2, x64dbg, Binary Ninja, OllyDbg.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIGNATURE PROJECT SECTION -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-[#37DCF2]"></div>
+                <h2 class="text-2xl font-bold text-white cyber-title uppercase tracking-wider type-cursor">Signature Project</h2>
+            </div>
+
+            <div class="relative group rounded-xl border border-[#37DCF2]/40 bg-[#0f1623]/80 overflow-hidden shadow-[0_0_30px_rgba(55,220,242,0.1)] hover:shadow-[0_0_50px_rgba(55,220,242,0.3)] transition-all duration-500">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#37DCF2]/20 via-transparent to-purple-600/20 opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-500 blur-sm"></div>
+                
+                <div class="relative flex flex-col md:flex-row">
+                    <div class="md:w-1/3 p-8 border-b md:border-b-0 md:border-r border-[#37DCF2]/20 bg-black/40 flex flex-col justify-between items-center md:items-start text-center md:text-left">
+                        <div>
+                            <div class="inline-block px-3 py-1 border border-[#37DCF2] rounded-full text-xs font-mono text-[#37DCF2] mb-4 tracking-wider uppercase">Personal Project</div>
+                            <h3 class="text-4xl font-bold text-white cyber-title mb-2 glow-pulse">NeoStealth<br/><span class="text-[#37DCF2]">OS</span></h3>
+                            <p class="text-gray-400 text-sm font-mono">Debian 10 (Buster) Based</p>
+                        </div>
+                        
+                        <div class="mt-8 hidden md:block w-full">
+                            <div class="bg-black/60 rounded border border-[#37DCF2]/10 p-4 backdrop-blur-sm">
+                                <div class="absolute inset-0 bg-[#37DCF2]/5 animate-pulse"></div>
+                                <div class="flex items-center gap-2 mb-3 opacity-50 relative z-10">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="text-xs font-mono text-[#37DCF2]/80 leading-5 relative z-10">
+                                    > init_secure_boot.sh<br>
+                                    > load_nvidia_modules...<br>
+                                    > deploy_neostealth_v1.0<br>
+                                    > <span class="text-[#37DCF2] animate-pulse">_</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-2/3 p-8 relative z-10">
+                        <h4 class="text-xl text-white font-bold mb-4 border-b border-[#37DCF2]/20 pb-2">Secure OS Development</h4>
+                        <p class="text-gray-300 leading-relaxed mb-8">
+                            Created NeoStealth, a custom Debian 10 (Buster) Operating System with KDE Display Manager, security hardening, and built-in forensics/reverse engineering tools. Unlike standard Linux builds, NeoStealth OS was fully adaptable with NVIDIA GPUs, ensuring high performance for penetration testing and malware analysis.
+                        </p>
+
+                        <div class="grid grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex items-start gap-3 group/icon">
+                                <div class="w-8 h-8 rounded bg-[#37DCF2]/10 flex items-center justify-center flex-shrink-0 mt-0.5 border-[#37DCF2]/20">
+                                    <span class="material-icons text-[#37DCF2] text-lg">desktop_windows</span>
+                                </div>
+                                <div>
+                                    <span class="text-white font-semibold block text-sm">KDE Display Manager</span>
+                                    <span class="text-gray-400 text-xs">Optimized GUI Environment</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 group/icon">
+                                <div class="w-8 h-8 rounded bg-[#37DCF2]/10 flex items-center justify-center flex-shrink-0 mt-0.5 border-[#37DCF2]/20">
+                                    <span class="material-icons text-[#37DCF2] text-lg">security</span>
+                                </div>
+                                <div>
+                                    <span class="text-white font-semibold block text-sm">Security Hardening</span>
+                                    <span class="text-gray-400 text-xs">Pre-configured Kernel Security</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 group/icon">
+                                <div class="w-8 h-8 rounded bg-[#37DCF2]/10 flex items-center justify-center flex-shrink-0 mt-0.5 border-[#37DCF2]/20">
+                                    <span class="material-icons text-[#37DCF2] text-lg">build_circle</span>
+                                </div>
+                                <div>
+                                    <span class="text-white font-semibold block text-sm">Forensics Tools</span>
+                                    <span class="text-gray-400 text-xs">Built-in RE & Analysis Suite</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 group/icon">
+                                <div class="w-8 h-8 rounded bg-[#37DCF2]/10 flex items-center justify-center flex-shrink-0 mt-0.5 border-[#37DCF2]/20">
+                                    <span class="material-icons text-[#37DCF2] text-lg">memory</span>
+                                </div>
+                                <div>
+                                    <span class="text-white font-semibold block text-sm">NVIDIA Support</span>
+                                    <span class="text-gray-400 text-xs">High-Performance GPU Computing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS & TRAINING SECTION -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-1 bg-[#37DCF2]"></div>
+                <h2 class="text-2xl font-bold text-white cyber-title uppercase tracking-wider type-cursor">Certifications & Training</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Category 1 -->
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 rounded-lg p-6 hover:border-[#37DCF2] hover:shadow-[0_0_25px_rgba(55,220,242,0.2)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="flex items-center gap-3 mb-4 border-b border-[#37DCF2]/20 pb-3">
+                        <span class="material-icons text-[#37DCF2] text-2xl">radar</span>
+                        <h3 class="text-[#37DCF2] font-bold cyber-title text-lg">SOC & Malware Analysis</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Stellar Cyber Essential Associate</div>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-[#37DCF2] font-mono text-xs">SOC Analyst & Admin</span>
+                                <span class="text-gray-500 font-mono text-xs">• Stellar Cyber (2025)</span>
+                            </div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Cyber Threat Intelligence (CTI)</div>
+                            <div class="text-gray-400 font-mono text-xs">Google (2024)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Mandiant Automated Defense</div>
+                            <div class="text-gray-400 font-mono text-xs">Google (2024)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Cortex XSOAR</div>
+                            <div class="text-gray-400 font-mono text-xs">Palo Alto Networks (2024)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Threat & Vulnerability Management</div>
+                            <div class="text-gray-400 font-mono text-xs">Cyble (2024)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 rounded-lg p-6 hover:border-[#37DCF2] hover:shadow-[0_0_25px_rgba(55,220,242,0.2)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="flex items-center gap-3 mb-4 border-b border-[#37DCF2]/20 pb-3">
+                        <span class="material-icons text-[#37DCF2] text-2xl">verified_user</span>
+                        <h3 class="text-[#37DCF2] font-bold cyber-title text-lg">Core Cybersecurity</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Certified Ethical Hacker (CEH)</div>
+                            <div class="text-gray-400 font-mono text-xs">Creative IT Institute (2018)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Offensive Security Certified Professional (OSCP)</div>
+                            <div class="text-gray-400 font-mono text-xs">Creative IT Institute (2019)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">APIs and API Security</div>
+                            <div class="text-gray-400 font-mono text-xs">No Name Security (2023)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="bg-[#0a0e27]/70 border border-[#37DCF2]/30 rounded-lg p-6 hover:border-[#37DCF2] hover:shadow-[0_0_25px_rgba(55,220,242,0.2)] hover:-translate-y-1 transition-all duration-300 flex-col">
+                    <div class="flex items-center gap-3 mb-4 border-b border-[#37DCF2]/20 pb-3">
+                        <span class="material-icons text-[#37DCF2] text-2xl">cloud_done</span>
+                        <h3 class="text-[#37DCF2] font-bold cyber-title text-lg">Cloud & Infrastructure</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Logging, Monitoring & Observability</div>
+                            <div class="text-gray-400 font-mono text-xs">Google Cloud (2024)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Hybrid Cloud Observability & Monitoring</div>
+                            <div class="text-gray-400 font-mono text-xs">SolarWinds (2024)</div>
+                        </div>
+                        <div class="group/item">
+                            <div class="text-white text-sm font-semibold group-hover/item:text-[#37DCF2] transition-colors">Scale Computing Technical Certification</div>
+                            <div class="text-gray-400 font-mono text-xs">Scale Computing (2024)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-12 border-t border-[#37DCF2]/20">
+            <h2 class="text-2xl font-bold text-white cyber-title mb-6 glow-pulse">Initialize Connection</h2>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="#" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 rounded-full border border-[#37DCF2] flex items-center justify-center text-[#37DCF2] group-hover:bg-[#37DCF2] group-hover:text-black transition-all duration-300 shadow-[0_0_10px_rgba(55,220,242,0.2)]">
+                        <span class="material-icons text-2xl">email</span>
+                    </div>
+                    <span class="text-gray-400 text-sm group-hover:text-white font-mono">Email Me</span>
+                </a>
+                <a href="#" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 rounded-full border border-[#37DCF2] flex items-center justify-center text-[#37DCF2] group-hover:bg-[#37DCF2] group-hover:text-black transition-all duration-300 shadow-[0_0_10px_rgba(55,220,242,0.2)]">
+                        <span class="material-icons text-2xl">code</span>
+                    </div>
+                    <span class="text-gray-400 text-sm group-hover:text-white font-mono">GitHub</span>
+                </a>
+                <a href="#" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 rounded-full border border-[#37DCF2] flex items-center justify-center text-[#37DCF2] group-hover:bg-[#37DCF2] group-hover:text-black transition-all duration-300 shadow-[0_0_10px_rgba(55,220,242,0.2)]">
+                        <span class="material-icons text-2xl">link</span>
+                    </div>
+                    <span class="text-gray-400 text-sm group-hover:text-white font-mono">LinkedIn</span>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm font-mono">SYSTEM STATUS: ONLINE // © 2024 MAHDI HASAN</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
